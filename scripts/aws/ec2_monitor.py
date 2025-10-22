@@ -62,7 +62,9 @@ def main():
         logger.info(f"Instance {instance_id} CPU Utilization: {cpu:.2f}%")
 
         if cpu > CPU_THRESHOLD:
-            logger.warning(f"High CPU alert: {instance_id} exceeds {CPU_THRESHOLD}%")
+            logger.warning(
+                f"High CPU alert: {instance_id} exceeds {CPU_THRESHOLD}%"
+            )
 
     logger.info("EC2 monitoring complete.")
 
