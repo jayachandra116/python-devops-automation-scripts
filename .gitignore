@@ -4,6 +4,13 @@ __pycache__/
 .venv/
 venv/
 dist/
-build/
 .aws/
 credentials
+
+# Package installation
+*.egg
+*.egg-info/
+*.dist-info/
+build/
+
+logs/
