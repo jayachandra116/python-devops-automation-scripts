@@ -23,7 +23,9 @@ def audit_iam_users():
             continue
 
         for key in keys:
-            last_used = iam.get_access_key_last_used(AccessKeyId=key["AccessKeyId"])
+            last_used = iam.get_access_key_last_used(
+                AccessKeyId=key["AccessKeyId"]
+            )
             last_used_date = last_used["AccessKeyLastUsed"].get("LastUsedDate")
             if not last_used_date:
                 logger.warning(f"{username}: Access key never used.")
@@ -31,9 +33,13 @@ def audit_iam_users():
 
             days_inactive = (now - last_used_date).days
             if days_inactive > INACTIVE_DAYS:
-                logger.warning(f"{username} inactive for {days_inactive} days.")
+                logger.warning(
+                    f"{username} inactive for {days_inactive} days."
+                )
             else:
-                logger.info(f"{username}: Active ({days_inactive} days since last use)")
+                logger.info(
+                    f"{username}: Active ({days_inactive} days since last use)"
+                )
 
 
 def main():
