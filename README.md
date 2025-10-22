@@ -13,3 +13,9 @@ A collection of Python scripts for automating everyday DevOps tasks — from AWS
 - CI/CD integration using GitHub Actions
 
 ---
+## ⚙️ Setup
+
+```bash
+git clone https://github.com/jayachandra116/python-devops-automation-scripts.git
+cd python-devops-automation-scripts
+pip install -r requirements.txt

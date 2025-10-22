@@ -1,0 +1,5 @@
+aws:
+  region: "us-east-1"
+  s3_bucket: "example-bucket"
+  cpu_threshold: 80
+  disk_alert_threshold: 80
