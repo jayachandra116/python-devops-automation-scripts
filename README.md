@@ -36,3 +36,17 @@ Run examples:
 python scripts/aws/ec2_monitor.py
 python scripts/aws/s3_manager.py
 python scripts/aws/iam_audit.py
+
+## 🐳 Docker & System Automation
+
+### `container_health_check.py`
+Monitors all running Docker containers for CPU and memory usage.  
+Alerts if any container crosses the defined thresholds.
+
+### `disk_usage_alert.py`
+Checks disk and memory usage on the host system and logs warnings if thresholds are exceeded.
+
+Run examples:
+```bash
+python scripts/docker/container_health_check.py
+python scripts/system/disk_usage_alert.py

@@ -2,3 +2,5 @@ boto3
 pyyaml
 flake8
 pytest
+docker
+psutil
