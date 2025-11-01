@@ -25,7 +25,9 @@ def get_container_stats(container):
     # pprint.pprint(stats)
     if system_delta > 0.0:
         cpu_percent = (
-            (cpu_delta / system_delta) * stats["cpu_stats"]["online_cpus"] * 100.0
+            (cpu_delta / system_delta)
+            * stats["cpu_stats"]["online_cpus"]
+            * 100.0
         )
 
     mem_usage = stats["memory_stats"].get("usage", 0)
@@ -46,12 +48,18 @@ def main():
     logger.info("Checking container health...")
     for container in containers:
         cpu, mem = get_container_stats(container)
-        logger.info(f"{container.name}: CPU={cpu:.2f}% | Memory={mem:.2f}%")
+        logger.info(
+            f"{container.name}: CPU={cpu:.2f}% | Memory={mem:.2f}%"
+        )
 
         if cpu > CPU_THRESHOLD:
-            logger.warning(f"High CPU alert for {container.name}: {cpu:.2f}%")
+            logger.warning(
+                f"High CPU alert for {container.name}: {cpu:.2f}%"
+            )
         if mem > MEMORY_THRESHOLD:
-            logger.warning(f"High memory alert for {container.name}: {mem:.2f}%")
+            logger.warning(
+                f"High memory alert for {container.name}: {mem:.2f}%"
+            )
 
     logger.info("Docker container health check complete.")
 
