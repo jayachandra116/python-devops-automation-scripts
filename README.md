@@ -65,3 +65,11 @@ Steps:
 1. Lint code with `flake8`
 2. Check formatting with `black`
 3. Run tests with `pytest`
+
+## 🐳 Docker Support
+
+This project can be containerized for easy deployment.
+
+### Build the image
+```bash
+docker build -t python-devops-automation-scripts:latest .
