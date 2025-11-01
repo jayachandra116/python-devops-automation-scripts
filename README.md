@@ -50,3 +50,18 @@ Run examples:
 ```bash
 python scripts/docker/container_health_check.py
 python scripts/system/disk_usage_alert.py
+
+## 🧪 CI/CD Integration (GitHub Actions)
+
+This repository uses **GitHub Actions** for automated linting, formatting, and testing.
+
+### Workflow: `.github/workflows/lint_and_test.yml`
+
+Runs automatically on:
+- Every push to `main`
+- Every pull request
+
+Steps:
+1. Lint code with `flake8`
+2. Check formatting with `black`
+3. Run tests with `pytest`

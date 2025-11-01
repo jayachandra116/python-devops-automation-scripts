@@ -16,9 +16,7 @@ def check_disk_usage(path="/"):
 
     logger.info(f"Disk usage for {path}: {percent_used:.2f}% used")
     if percent_used > DISK_THRESHOLD:
-        logger.warning(
-            f"⚠️ Disk usage exceeds threshold ({DISK_THRESHOLD}%) on {path}"
-        )
+        logger.warning(f"⚠️ Disk usage exceeds threshold ({DISK_THRESHOLD}%) on {path}")
 
 
 def check_memory_usage():
@@ -28,9 +26,7 @@ def check_memory_usage():
 
     logger.info(f"Memory usage: {percent_used:.2f}% used")
     if percent_used > DISK_THRESHOLD:
-        logger.warning(
-            f"⚠️ Memory usage exceeds threshold ({DISK_THRESHOLD}%)"
-        )
+        logger.warning(f"⚠️ Memory usage exceeds threshold ({DISK_THRESHOLD}%)")
 
 
 def main():

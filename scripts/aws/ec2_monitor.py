@@ -17,8 +17,6 @@ def get_ec2_instances():
     instances = ec2_client.describe_instances(
         Filters=[{"Name": "instance-state-name", "Values": ["running"]}]
     )
-    # logger.info(instances)
-    # pprint.pprint(instances)
     instance_ids = []
     for reservation in instances["Reservations"]:
         for instance in reservation["Instances"]:
@@ -62,9 +60,7 @@ def main():
         logger.info(f"Instance {instance_id} CPU Utilization: {cpu:.2f}%")
 
         if cpu > CPU_THRESHOLD:
-            logger.warning(
-                f"High CPU alert: {instance_id} exceeds {CPU_THRESHOLD}%"
-            )
+            logger.warning(f"High CPU alert: {instance_id} exceeds {CPU_THRESHOLD}%")
 
     logger.info("EC2 monitoring complete.")
 
